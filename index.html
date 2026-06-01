@@ -56,539 +56,74 @@
             height: 64px;
         }
 
-        .logo {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 1.35rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--light);
-        }
-        .logo em {
-            color: var(--yellow);
-            font-style: normal;
-        }
+        .logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.35rem; letter-spacing: 2px; text-transform: uppercase; color: var(--light); }
+        .logo em { color: var(--yellow); font-style: normal; }
 
-        .header-cta {
-            display: none;
-        }
-        @media (min-width: 600px) {
-            .header-cta {
-                display: flex;
-                align-items: center;
-                gap: 12px;
-            }
-        }
+        .header-cta { display: none; }
+        @media (min-width: 600px) { .header-cta { display: flex; align-items: center; gap: 12px; } }
 
-        .badge {
-            background: var(--steel);
-            color: var(--muted);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            padding: 6px 12px;
-            border-radius: 2px;
-        }
+        .badge { background: var(--steel); color: var(--muted); font-size: 0.75rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; padding: 6px 12px; border-radius: 2px; }
 
-        .hero {
-            position: relative;
-            min-height: 92vh;
-            display: flex;
-            align-items: flex-end;
-            padding: 80px 5% 64px;
-            overflow: hidden;
-        }
+        .hero { position: relative; min-height: 92vh; display: flex; align-items: flex-end; padding: 80px 5% 64px; overflow: hidden; }
+        .hero-bg { position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1400&q=80'); background-size: cover; background-position: center; filter: brightness(0.28) saturate(0.6); transform: scale(1.04); animation: zoomOut 8s ease-out forwards; }
+        @keyframes zoomOut { from { transform: scale(1.08); } to { transform: scale(1.0); } }
+        .hero-overlay { position: absolute; inset: 0; background: linear-gradient(160deg, transparent 40%, rgba(245,197,24,0.06) 100%); }
+        .hero-stripe { position: absolute; top: 0; right: -10%; width: 40%; height: 100%; background: repeating-linear-gradient(-55deg, transparent, transparent 18px, rgba(245,197,24,0.04) 18px, rgba(245,197,24,0.04) 20px); pointer-events: none; }
+        .hero-content { position: relative; z-index: 2; max-width: 860px; }
+        .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: var(--yellow); color: var(--black); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 2.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 2px; margin-bottom: 24px; animation: fadeUp 0.6s ease both; }
+        .hero-tag::before { content: ''; width: 8px; height: 8px; background: var(--black); border-radius: 50%; animation: pulse 1.8s ease infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
+        .hero h1 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(3rem, 9vw, 7rem); line-height: 0.92; letter-spacing: -1px; text-transform: uppercase; margin-bottom: 28px; animation: fadeUp 0.6s 0.1s ease both; }
+        .hero h1 .accent { color: var(--yellow); display: block; }
+        .hero-sub { font-size: 1.1rem; color: #b0b5be; max-width: 480px; margin-bottom: 40px; animation: fadeUp 0.6s 0.2s ease both; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; animation: fadeUp 0.6s 0.3s ease both; }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
 
-        .hero-bg {
-            position: absolute;
-            inset: 0;
-            background-image: url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1400&q=80');
-            background-size: cover;
-            background-position: center;
-            filter: brightness(0.28) saturate(0.6);
-            transform: scale(1.04);
-            animation: zoomOut 8s ease-out forwards;
-        }
+        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 1.5px; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: all 0.2s ease; cursor: pointer; border: none; }
+        .btn-primary { background: var(--yellow); color: var(--black); }
+        .btn-ghost { background: transparent; color: var(--light); border: 1.5px solid rgba(240,240,236,0.25); }
+        .btn-wp { background: #25d366; color: white; }
+        .btn-google { background: #ffffff; color: #4285F4; font-weight: 700; border: 1px solid #ffffff; }
 
-        @keyframes zoomOut {
-            from { transform: scale(1.08); }
-            to   { transform: scale(1.0); }
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(
-                160deg,
-                transparent 40%,
-                rgba(245,197,24,0.06) 100%
-            );
-        }
-
-        .hero-stripe {
-            position: absolute;
-            top: 0; right: -10%;
-            width: 40%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                -55deg,
-                transparent,
-                transparent 18px,
-                rgba(245,197,24,0.04) 18px,
-                rgba(245,197,24,0.04) 20px
-            );
-            pointer-events: none;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 860px;
-        }
-
-        .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: var(--yellow);
-            color: var(--black);
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: 0.75rem;
-            letter-spacing: 2.5px;
-            text-transform: uppercase;
-            padding: 6px 14px;
-            border-radius: 2px;
-            margin-bottom: 24px;
-            animation: fadeUp 0.6s ease both;
-        }
-
-        .hero-tag::before {
-            content: '';
-            width: 8px; height: 8px;
-            background: var(--black);
-            border-radius: 50%;
-            animation: pulse 1.8s ease infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.5; transform: scale(0.7); }
-        }
-
-        .hero h1 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: clamp(3rem, 9vw, 7rem);
-            line-height: 0.92;
-            letter-spacing: -1px;
-            text-transform: uppercase;
-            margin-bottom: 28px;
-            animation: fadeUp 0.6s 0.1s ease both;
-        }
-
-        .hero h1 .accent {
-            color: var(--yellow);
-            display: block;
-        }
-
-        .hero-sub {
-            font-size: 1.1rem;
-            color: #b0b5be;
-            max-width: 480px;
-            margin-bottom: 40px;
-            animation: fadeUp 0.6s 0.2s ease both;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            animation: fadeUp 0.6s 0.3s ease both;
-        }
-
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(24px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 28px;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            text-decoration: none;
-            border-radius: var(--radius);
-            transition: all 0.2s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--yellow);
-            color: var(--black);
-        }
-        .btn-primary:hover {
-            background: #ffe052;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(245,197,24,0.3);
-        }
-
-        .btn-ghost {
-            background: transparent;
-            color: var(--light);
-            border: 1.5px solid rgba(240,240,236,0.25);
-        }
-        .btn-ghost:hover {
-            border-color: var(--light);
-            transform: translateY(-2px);
-        }
-
-        .btn-wp {
-            background: #25d366;
-            color: white;
-        }
-        .btn-wp:hover {
-            background: #1ebe5d;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(37,211,102,0.3);
-        }
-
-        .btn-google {
-            background: #ffffff;
-            color: #4285F4;
-            font-weight: 700;
-            border: 1px solid #ffffff;
-        }
-        .btn-google:hover {
-            background: #f1f1f1;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(255,255,255,0.1);
-        }
-
-        .hero-stats {
-            position: absolute;
-            bottom: 0; left: 0; right: 0;
-            background: rgba(10,10,10,0.85);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid rgba(245,197,24,0.15);
-            display: flex;
-            justify-content: center;
-            z-index: 3;
-        }
-
-        .stat {
-            flex: 1;
-            max-width: 220px;
-            padding: 18px 20px;
-            text-align: center;
-            border-right: 1px solid rgba(255,255,255,0.07);
-        }
+        .hero-stats { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(10,10,10,0.85); backdrop-filter: blur(10px); border-top: 1px solid rgba(245,197,24,0.15); display: flex; justify-content: center; z-index: 3; }
+        .stat { flex: 1; max-width: 220px; padding: 18px 20px; text-align: center; border-right: 1px solid rgba(255,255,255,0.07); }
         .stat:last-child { border-right: none; }
+        .stat-number { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.8rem; color: var(--yellow); line-height: 1; }
+        .stat-label { font-size: 0.72rem; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
 
-        .stat-number {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 1.8rem;
-            color: var(--yellow);
-            line-height: 1;
-        }
+        .services { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-label { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--yellow); margin-bottom: 12px; }
+        .section-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(2rem, 5vw, 3.5rem); text-transform: uppercase; line-height: 1; margin-bottom: 48px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); }
+        .service-card { background: var(--mid); padding: 36px 30px; position: relative; overflow: hidden; }
+        .service-card:hover { background: var(--steel); }
+        .service-icon { font-size: 2.2rem; margin-bottom: 18px; display: block; }
+        .service-card h3 { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.35rem; text-transform: uppercase; margin-bottom: 10px; }
+        .service-card p { font-size: 0.92rem; color: var(--muted); line-height: 1.65; }
 
-        .stat-label {
-            font-size: 0.72rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            color: var(--muted);
-            margin-top: 4px;
-        }
+        /* Nueva sección: Cobertura */
+        .coverage { padding: 80px 5%; background: rgba(245,197,24,0.02); border-top: 1px solid rgba(245,197,24,0.1); border-bottom: 1px solid rgba(245,197,24,0.1); text-align: center; }
+        .coverage-inner { max-width: 800px; margin: 0 auto; }
+        .coverage p { color: var(--muted); font-size: 1.1rem; line-height: 1.8; }
 
-        .services {
-            padding: 80px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-label {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--yellow);
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            text-transform: uppercase;
-            line-height: 1;
-            margin-bottom: 48px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2px;
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.07);
-        }
-
-        .service-card {
-            background: var(--mid);
-            padding: 36px 30px;
-            position: relative;
-            overflow: hidden;
-            transition: background 0.25s ease;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 4px;
-            height: 0;
-            background: var(--yellow);
-            transition: height 0.3s ease;
-        }
-
-        .service-card:hover {
-            background: var(--steel);
-        }
-
-        .service-card:hover::before {
-            height: 100%;
-        }
-
-        .service-icon {
-            font-size: 2.2rem;
-            margin-bottom: 18px;
-            display: block;
-        }
-
-        .service-card h3 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: 1.35rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-            color: var(--light);
-        }
-
-        .service-card p {
-            font-size: 0.92rem;
-            color: var(--muted);
-            line-height: 1.65;
-        }
-
-        .service-num {
-            position: absolute;
-            bottom: 20px; right: 24px;
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 3.5rem;
-            color: rgba(255,255,255,0.04);
-            line-height: 1;
-        }
-
-        .process {
-            background: var(--black);
-            padding: 80px 5%;
-        }
-
-        .process-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 0;
-            margin-top: 48px;
-        }
-
-        .step {
-            padding: 32px 28px;
-            border-right: 1px solid rgba(255,255,255,0.07);
-            position: relative;
-        }
+        .process { background: var(--black); padding: 80px 5%; }
+        .process-inner { max-width: 1200px; margin: 0 auto; }
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin-top: 48px; }
+        .step { padding: 32px 28px; border-right: 1px solid rgba(255,255,255,0.07); }
         .step:last-child { border-right: none; }
+        .step-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 3rem; color: var(--yellow); line-height: 1; margin-bottom: 16px; }
 
-        .step-num {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 3rem;
-            color: var(--yellow);
-            line-height: 1;
-            margin-bottom: 16px;
-        }
+        .testimonials { padding: 80px 5%; max-width: 700px; margin: 0 auto; text-align: center; }
+        .google-box { background: var(--mid); border: 1px solid rgba(255, 255, 255, 0.05); padding: 45px 30px; border-radius: var(--radius); margin-top: 24px; display: flex; flex-direction: column; align-items: center; gap: 16px; }
+        .google-stars { color: var(--yellow); font-size: 2rem; }
 
-        .step h4 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 8px;
-        }
+        .cta { padding: 100px 5%; text-align: center; position: relative; }
+        .cta-inner { max-width: 640px; margin: 0 auto; }
+        .cta h2 { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(2.2rem, 6vw, 4.5rem); text-transform: uppercase; margin-bottom: 20px; }
+        .cta h2 span { color: var(--yellow); }
 
-        .step p {
-            font-size: 0.88rem;
-            color: var(--muted);
-        }
-
-        /* ─── GOOGLE REVIEWS LINK SECTION ─── */
-        .testimonials {
-            padding: 80px 5%;
-            max-width: 700px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .google-box {
-            background: var(--mid);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            padding: 45px 30px;
-            border-radius: var(--radius);
-            margin-top: 24px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 16px;
-        }
-
-        .google-stars {
-            color: var(--yellow);
-            font-size: 2rem;
-            letter-spacing: 2px;
-            line-height: 1;
-        }
-
-        .google-box p {
-            font-size: 1.05rem;
-            color: #b0b5be;
-            max-width: 500px;
-            margin-bottom: 10px;
-        }
-
-        .cta {
-            padding: 100px 5%;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(
-                -45deg,
-                transparent,
-                transparent 24px,
-                rgba(245,197,24,0.03) 24px,
-                rgba(245,197,24,0.03) 26px
-            );
-        }
-
-        .cta-inner {
-            position: relative;
-            z-index: 2;
-            max-width: 640px;
-            margin: 0 auto;
-        }
-
-        .cta h2 {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: clamp(2.2rem, 6vw, 4.5rem);
-            text-transform: uppercase;
-            line-height: 0.95;
-            margin-bottom: 20px;
-        }
-
-        .cta h2 span {
-            color: var(--yellow);
-        }
-
-        .cta p {
-            color: var(--muted);
-            margin-bottom: 36px;
-            font-size: 1rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            justify-content: center;
-        }
-
-        footer {
-            background: var(--black);
-            border-top: 1px solid rgba(255,255,255,0.07);
-            padding: 28px 5%;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .footer-logo {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 900;
-            font-size: 1rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: var(--muted);
-        }
-        .footer-logo em {
-            color: var(--yellow);
-            font-style: normal;
-        }
-
-        .footer-copy {
-            font-size: 0.8rem;
-            color: var(--muted);
-        }
-
-        .floating-wp {
-            position: fixed;
-            bottom: 24px; right: 24px;
-            width: 56px; height: 56px;
-            background: #25d366;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-            z-index: 999;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s;
-            animation: bouncein 0.5s 1.2s ease both;
-        }
-
-        .floating-wp:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 28px rgba(37,211,102,0.6);
-        }
-
-        @keyframes bouncein {
-            from { opacity: 0; transform: scale(0.5); }
-            to   { opacity: 1; transform: scale(1); }
-        }
+        footer { background: var(--black); border-top: 1px solid rgba(255,255,255,0.07); padding: 28px 5%; display: flex; justify-content: space-between; align-items: center; }
+        .floating-wp { position: fixed; bottom: 24px; right: 24px; width: 56px; height: 56px; background: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 4px 20px rgba(37,211,102,0.45); z-index: 999; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -605,38 +140,19 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-stripe"></div>
-
         <div class="hero-content">
             <div class="hero-tag">¿Piso lleno o obra con escombros?</div>
-            <h1>
-                Lo Vaciamos<br>
-                <span class="accent">Hoy.</span>
-                Precio Cerrado.
-            </h1>
+            <h1>Lo Vaciamos<br><span class="accent">Hoy.</span> Precio Cerrado.</h1>
             <p class="hero-sub">Vaciamos pisos, naves y trasteros. Retiramos escombros, restos de poda y muebles viejos. Servicio rápido con camión propio y precio cerrado en Valencia.</p>
             <div class="hero-actions">
-                <a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="btn btn-wp" target="_blank">
-                    💬 Presupuesto por WhatsApp
-                </a>
-                <a href="tel:+34690100790" class="btn btn-ghost">
-                    📞 Llamar ahora
-                </a>
+                <a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="btn btn-wp" target="_blank">💬 Presupuesto por WhatsApp</a>
+                <a href="tel:+34690100790" class="btn btn-ghost">📞 Llamar ahora</a>
             </div>
         </div>
-
         <div class="hero-stats">
-            <div class="stat">
-                <div class="stat-number">24h</div>
-                <div class="stat-label">Respuesta rápida</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Gestión autorizada</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">0€</div>
-                <div class="stat-label">Presupuesto gratis</div>
-            </div>
+            <div class="stat"><div class="stat-number">24h</div><div class="stat-label">Respuesta rápida</div></div>
+            <div class="stat"><div class="stat-number">100%</div><div class="stat-label">Gestión autorizada</div></div>
+            <div class="stat"><div class="stat-number">0€</div><div class="stat-label">Presupuesto gratis</div></div>
         </div>
     </section>
 
@@ -644,30 +160,18 @@
         <div class="section-label">— Lo que hacemos</div>
         <h2 class="section-title">Nuestros Servicios</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <span class="service-icon">🏠</span>
-                <h3>Vaciado de Pisos y Naves</h3>
-                <p>Vaciamos por completo pisos, naves industriales, chalets, oficinas y locales. Retiramos muebles, enseres y acumulaciones de trastos dejándolo limpio.</p>
-                <div class="service-num">01</div>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">🏗️</span>
-                <h3>Retirada de Escombros y Poda</h3>
-                <p>Limpieza de restos de reformas, obras y recogida de podas o restos vegetales de parcelas y jardines. Carga rápida con camión propio.</p>
-                <div class="service-num">02</div>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">⚙️</span>
-                <h3>Recogida de Metales y Palés</h3>
-                <p>Retirada de chatarra, limpieza de maquinaria pesada, estructuras metálicas viejas y palés de madera acumulados en almacenes.</p>
-                <div class="service-num">03</div>
-            </div>
-            <div class="service-card">
-                <span class="service-icon">🚛</span>
-                <h3>Mudanzas y Portes</h3>
-                <p>Trasladamos tus pertenencias, muebles o cajas de forma ágil y segura. Portes puntuales en Valencia y mudanzas locales adaptadas a ti.</p>
-                <div class="service-num">04</div>
-            </div>
+            <div class="service-card"><span class="service-icon">🏠</span><h3>Vaciado de Pisos y Naves</h3><p>Vaciamos por completo pisos, naves industriales, chalets, oficinas y locales.</p></div>
+            <div class="service-card"><span class="service-icon">🏗️</span><h3>Retirada de Escombros y Poda</h3><p>Limpieza de restos de reformas, obras y recogida de podas.</p></div>
+            <div class="service-card"><span class="service-icon">⚙️</span><h3>Recogida de Metales</h3><p>Retirada de chatarra, maquinaria pesada y estructuras metálicas.</p></div>
+            <div class="service-card"><span class="service-icon">🚛</span><h3>Mudanzas y Portes</h3><p>Trasladamos tus pertenencias de forma ágil y segura.</p></div>
+        </div>
+    </section>
+
+    <section class="coverage">
+        <div class="coverage-inner">
+            <div class="section-label">— Nuestra cobertura</div>
+            <h2 class="section-title">Trabajamos en Valencia y alrededores</h2>
+            <p>Ofrecemos nuestros servicios profesionales de vaciado y retirada en un radio de <strong>70 km desde Valencia capital</strong>. Nos desplazamos con nuestro propio camión para garantizarte un servicio ágil, puntual y sin intermediarios.</p>
         </div>
     </section>
 
@@ -676,21 +180,9 @@
             <div class="section-label">— ¿Cómo funciona?</div>
             <h2 class="section-title">En 3 Pasos</h2>
             <div class="steps">
-                <div class="step">
-                    <div class="step-num">01</div>
-                    <h4>Contáctanos</h4>
-                    <p>Llama o escríbenos un WhatsApp explicándonos qué necesitas retirar. Sin esperas.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">02</div>
-                    <h4>Presupuesto sin sorpresas</h4>
-                    <p>Te damos un precio cerrado adaptado a tu situación real y volumen.</p>
-                </div>
-                <div class="step">
-                    <div class="step-num">03</div>
-                    <h4>Carga y Limpieza</h4>
-                    <p>Acudimos puntuales con el camión, realizamos la recogida y lo gestionamos correctamente.</p>
-                </div>
+                <div class="step"><div class="step-num">01</div><h4>Contáctanos</h4><p>Llama o escríbenos un WhatsApp.</p></div>
+                <div class="step"><div class="step-num">02</div><h4>Presupuesto sin sorpresas</h4><p>Precio cerrado adaptado a tu volumen.</p></div>
+                <div class="step"><div class="step-num">03</div><h4>Carga y Limpieza</h4><p>Recogida rápida y gestión correcta.</p></div>
             </div>
         </div>
     </section>
@@ -700,34 +192,26 @@
         <h2 class="section-title">¿Hemos trabajado juntos?</h2>
         <div class="google-box">
             <div class="google-stars">★★★★★</div>
-            <p>Tu valoración nos ayuda a seguir mejorando y a que más clientes en Valencia confíen en nuestro servicio independiente con camión propio.</p>
-            <a href="https://search.google.com/local/writereview?placeid=TU_PLACE_ID_AQUÍ" class="btn btn-google" target="_blank">
-                ✍️ Dejar reseña en Google
-            </a>
+            <p>Tu valoración nos ayuda a seguir mejorando y a que más clientes confíen en nuestro servicio.</p>
+            <a href="https://search.google.com/local/writereview?placeid=TU_PLACE_ID_AQUÍ" class="btn btn-google" target="_blank">✍️ Dejar reseña en Google</a>
         </div>
     </section>
 
     <section class="cta">
         <div class="cta-inner">
             <h2>¿Hablamos sin <span>compromiso?</span></h2>
-            <p>Trabajamos de forma independiente con camión propio en Valencia y alrededores. Rapidez y seriedad.</p>
             <div class="cta-buttons">
-                <a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="btn btn-wp" target="_blank">
-                    💬 WhatsApp
-                </a>
-                <a href="tel:+34690100790" class="btn btn-primary">
-                    📞 Llamar Ahora
-                </a>
+                <a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="btn btn-wp" target="_blank">💬 WhatsApp</a>
+                <a href="tel:+34690100790" class="btn btn-primary">📞 Llamar Ahora</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo">Recogidas & <em>Vaciados Pro</em></div>
-        <div class="footer-copy">&copy; 2026 · Todos los derechos reservados</div>
+        <div class="footer-copy">&copy; 2026 · Recogidas & Vaciados Pro</div>
     </footer>
 
-    <a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="floating-wp" target="_blank" aria-label="WhatsApp">💬</a>
+    <a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="floating-wp" target="_blank">💬</a>
 
 </body>
 </html>
