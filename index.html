@@ -1,701 +1,733 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2685.6">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vaciados y Retirada de Escombros en Valencia | Presupuesto Gratis</title>
+    <meta name="description" content="Servicios profesionales de vaciado de pisos, naves industriales, retirada de escombros, poda y portes en Valencia. Trabajo rápido con camión propio.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --yellow: #F5C518;
+            --black: #0a0a0a;
+            --dark: #111318;
+            --mid: #1c2028;
+            --steel: #2e3340;
+            --light: #f0f0ec;
+            --muted: #8a8f99;
+            --radius: 4px;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--dark);
+            color: var(--light);
+            font-family: 'Barlow', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.4;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 900;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(245,197,24,0.2);
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+
+        .logo {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1.35rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--light);
+        }
+        .logo em {
+            color: var(--yellow);
+            font-style: normal;
+        }
+
+        .header-cta {
+            display: none;
+        }
+        @media (min-width: 600px) {
+            .header-cta {
+                display: flex;
+                align-items: center;
+                gap: 12px;
+            }
+        }
+
+        .badge {
+            background: var(--steel);
+            color: var(--muted);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 2px;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: flex-end;
+            padding: 80px 5% 64px;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1400&q=80');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.28) saturate(0.6);
+            transform: scale(1.04);
+            animation: zoomOut 8s ease-out forwards;
+        }
+
+        @keyframes zoomOut {
+            from { transform: scale(1.08); }
+            to   { transform: scale(1.0); }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                160deg,
+                transparent 40%,
+                rgba(245,197,24,0.06) 100%
+            );
+        }
+
+        .hero-stripe {
+            position: absolute;
+            top: 0; right: -10%;
+            width: 40%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                -55deg,
+                transparent,
+                transparent 18px,
+                rgba(245,197,24,0.04) 18px,
+                rgba(245,197,24,0.04) 20px
+            );
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 860px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--yellow);
+            color: var(--black);
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 0.75rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            padding: 6px 14px;
+            border-radius: 2px;
+            margin-bottom: 24px;
+            animation: fadeUp 0.6s ease both;
+        }
+
+        .hero-tag::before {
+            content: '';
+            width: 8px; height: 8px;
+            background: var(--black);
+            border-radius: 50%;
+            animation: pulse 1.8s ease infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.7); }
+        }
+
+        .hero h1 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(3rem, 9vw, 7rem);
+            line-height: 0.92;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            animation: fadeUp 0.6s 0.1s ease both;
+        }
+
+        .hero h1 .accent {
+            color: var(--yellow);
+            display: block;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            color: #b0b5be;
+            max-width: 480px;
+            margin-bottom: 40px;
+            animation: fadeUp 0.6s 0.2s ease both;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            animation: fadeUp 0.6s 0.3s ease both;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 28px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--yellow);
+            color: var(--black);
+        }
+        .btn-primary:hover {
+            background: #ffe052;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(245,197,24,0.3);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--light);
+            border: 1.5px solid rgba(240,240,236,0.25);
+        }
+        .btn-ghost:hover {
+            border-color: var(--light);
+            transform: translateY(-2px);
+        }
+
+        .btn-wp {
+            background: #25d366;
+            color: white;
+        }
+        .btn-wp:hover {
+            background: #1ebe5d;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(37,211,102,0.3);
+        }
+
+        .btn-google {
+            background: #ffffff;
+            color: #4285F4;
+            font-weight: 700;
+            border: 1px solid #ffffff;
+        }
+        .btn-google:hover {
+            background: #f1f1f1;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255,255,255,0.1);
+        }
+
+        .hero-stats {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(245,197,24,0.15);
+            display: flex;
+            justify-content: center;
+            z-index: 3;
+        }
+
+        .stat {
+            flex: 1;
+            max-width: 220px;
+            padding: 18px 20px;
+            text-align: center;
+            border-right: 1px solid rgba(255,255,255,0.07);
+        }
+        .stat:last-child { border-right: none; }
+
+        .stat-number {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            color: var(--yellow);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.72rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-top: 4px;
+        }
+
+        .services {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-label {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--yellow);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            text-transform: uppercase;
+            line-height: 1;
+            margin-bottom: 48px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .service-card {
+            background: var(--mid);
+            padding: 36px 30px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.25s ease;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--yellow);
+            transition: height 0.3s ease;
+        }
+
+        .service-card:hover {
+            background: var(--steel);
+        }
+
+        .service-card:hover::before {
+            height: 100%;
+        }
+
+        .service-icon {
+            font-size: 2.2rem;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 1.35rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            color: var(--light);
+        }
+
+        .service-card p {
+            font-size: 0.92rem;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .service-num {
+            position: absolute;
+            bottom: 20px; right: 24px;
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 3.5rem;
+            color: rgba(255,255,255,0.04);
+            line-height: 1;
+        }
+
+        .process {
+            background: var(--black);
+            padding: 80px 5%;
+        }
+
+        .process-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0;
+            margin-top: 48px;
+        }
+
+        .step {
+            padding: 32px 28px;
+            border-right: 1px solid rgba(255,255,255,0.07);
+            position: relative;
+        }
+        .step:last-child { border-right: none; }
+
+        .step-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 3rem;
+            color: var(--yellow);
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        .step h4 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .step p {
+            font-size: 0.88rem;
+            color: var(--muted);
+        }
+
+        /* ─── GOOGLE REVIEWS LINK SECTION ─── */
+        .testimonials {
+            padding: 80px 5%;
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .google-box {
+            background: var(--mid);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 45px 30px;
+            border-radius: var(--radius);
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .google-stars {
+            color: var(--yellow);
+            font-size: 2rem;
+            letter-spacing: 2px;
+            line-height: 1;
+        }
+
+        .google-box p {
+            font-size: 1.05rem;
+            color: #b0b5be;
+            max-width: 500px;
+            margin-bottom: 10px;
+        }
+
+        .cta {
+            padding: 100px 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                -45deg,
+                transparent,
+                transparent 24px,
+                rgba(245,197,24,0.03) 24px,
+                rgba(245,197,24,0.03) 26px
+            );
+        }
+
+        .cta-inner {
+            position: relative;
+            z-index: 2;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
+            text-transform: uppercase;
+            line-height: 0.95;
+            margin-bottom: 20px;
+        }
+
+        .cta h2 span {
+            color: var(--yellow);
+        }
+
+        .cta p {
+            color: var(--muted);
+            margin-bottom: 36px;
+            font-size: 1rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+        }
+
+        footer {
+            background: var(--black);
+            border-top: 1px solid rgba(255,255,255,0.07);
+            padding: 28px 5%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .footer-logo {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 900;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .footer-logo em {
+            color: var(--yellow);
+            font-style: normal;
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .floating-wp {
+            position: fixed;
+            bottom: 24px; right: 24px;
+            width: 56px; height: 56px;
+            background: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+            z-index: 999;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+            animation: bouncein 0.5s 1.2s ease both;
+        }
+
+        .floating-wp:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 28px rgba(37,211,102,0.6);
+        }
+
+        @keyframes bouncein {
+            from { opacity: 0; transform: scale(0.5); }
+            to   { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="es"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Vaciados y Retirada de Escombros en Valencia | Presupuesto Gratis&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="description" content="Servicios profesionales de vaciado de pisos, retirada de escombros, poda y portes en Valencia. Presupuesto cerrado sin sorpresas y servicio en el día."&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700;900&amp;family=Barlow:wght@400;500;600&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--yellow: #F5C518;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--black: #0a0a0a;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--dark: #111318;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--mid: #1c2028;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--steel: #2e3340;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--light: #f0f0ec;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--muted: #8a8f99;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--radius: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>html { scroll-behavior: smooth; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--dark);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* ─── NOISE TEXTURE OVERLAY ─── */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>body::before {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");</p>
-<p class="p1"><span class="Apple-converted-space">            </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 1000;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.4;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* ─── HEADER ─── */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: sticky;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(10,10,10,0.95);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(12px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid rgba(245,197,24,0.2);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 5%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 64px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.logo {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.35rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--light);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.logo em {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--yellow);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-style: normal;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.header-cta {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (min-width: 600px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.header-cta {</p>
-<p class="p1"><span class="Apple-converted-space">                </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.badge {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--steel);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 6px 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* ─── HERO ─── */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>min-height: 92vh;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: flex-end;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 80px 5% 64px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-bg {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-image: url('https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&amp;fit=crop&amp;w=1400&amp;q=80');</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-size: cover;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-position: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>filter: brightness(0.28) saturate(0.6);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.04);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: zoomOut 8s ease-out forwards;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@keyframes zoomOut {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>from { transform: scale(1.08); }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>to <span class="Apple-converted-space">  </span>{ transform: scale(1.0); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-overlay {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(</p>
-<p class="p1"><span class="Apple-converted-space">                </span>160deg,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>transparent 40%,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>rgba(245,197,24,0.06) 100%</p>
-<p class="p1"><span class="Apple-converted-space">            </span>);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Diagonal stripe accent */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-stripe {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 0; right: -10%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 40%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: repeating-linear-gradient(</p>
-<p class="p1"><span class="Apple-converted-space">                </span>-55deg,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>transparent,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>transparent 18px,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>rgba(245,197,24,0.04) 18px,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>rgba(245,197,24,0.04) 20px</p>
-<p class="p1"><span class="Apple-converted-space">            </span>);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>pointer-events: none;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-content {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 2;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 860px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-tag {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--yellow);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--black);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.75rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 2.5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 6px 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeUp 0.6s ease both;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-tag::before {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 8px; height: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--black);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: pulse 1.8s ease infinite;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@keyframes pulse {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>0%, 100% { opacity: 1; transform: scale(1); }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>50% { opacity: 0.5; transform: scale(0.7); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(3rem, 9vw, 7rem);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 0.92;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: -1px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 28px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeUp 0.6s 0.1s ease both;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero h1 .accent {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--yellow);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-sub {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #b0b5be;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 480px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeUp 0.6s 0.2s ease both;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-actions {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: fadeUp 0.6s 0.3s ease both;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@keyframes fadeUp {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: translateY(24px); }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>to <span class="Apple-converted-space">  </span>{ opacity: 1; transform: translateY(0); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px 28px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1.5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: var(--radius);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s ease;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--yellow);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--black);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-primary:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #ffe052;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 24px rgba(245,197,24,0.3);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-ghost {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: transparent;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1.5px solid rgba(240,240,236,0.25);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-ghost:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-wp {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #25d366;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn-wp:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #1ebe5d;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-2px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 8px 24px rgba(37,211,102,0.3);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Hero bottom stats bar */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero-stats {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>bottom: 0; left: 0; right: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(10,10,10,0.85);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>backdrop-filter: blur(10px);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid rgba(245,197,24,0.15);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 3;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.stat {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 220px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 18px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-right: 1px solid rgba(255,255,255,0.07);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.stat:last-child { border-right: none; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.stat-number {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--yellow);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.stat-label {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.72rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 1px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* ─── SERVICES ─── */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.services {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 80px 5%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-label {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.7rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 3px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--yellow);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(2rem, 5vw, 3.5rem);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 48px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.services-grid {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255,255,255,0.05);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(255,255,255,0.07);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-card {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--mid);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 36px 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: background 0.25s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-card::before {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>top: 0; left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 4px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--yellow);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: height 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-card:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--steel);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-card:hover::before {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-icon {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 2.2rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-card h3 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.35rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--light);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-card p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.92rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.65;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.service-num {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>bottom: 20px; right: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3.5rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: rgba(255,255,255,0.04);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* ─── HOW IT WORKS ─── */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.process {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--black);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 80px 5%;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.process-inner {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1200px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.steps {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 48px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.step {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 32px 28px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-right: 1px solid rgba(255,255,255,0.07);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.step:last-child { border-right: none; }</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.step-num {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 3rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--yellow);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.step h4 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.5px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.step p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.88rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* ─── CTA SECTION ─── */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 100px 5%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta::before {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>content: '';</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>inset: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: repeating-linear-gradient(</p>
-<p class="p1"><span class="Apple-converted-space">                </span>-45deg,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>transparent,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>transparent 24px,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>rgba(245,197,24,0.03) 24px,</p>
-<p class="p1"><span class="Apple-converted-space">                </span>rgba(245,197,24,0.03) 26px</p>
-<p class="p1"><span class="Apple-converted-space">            </span>);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta-inner {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 2;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 640px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: clamp(2.2rem, 6vw, 4.5rem);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 0.95;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta h2 span {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--yellow);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 36px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.cta-buttons {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* ─── FOOTER ─── */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>footer {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--black);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid rgba(255,255,255,0.07);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 28px 5%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.footer-logo {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Barlow Condensed', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 900;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.footer-logo em {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--yellow);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-style: normal;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.footer-copy {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 0.8rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--muted);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* ─── FLOATING WA ─── */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.floating-wp {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: fixed;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>bottom: 24px; right: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 56px; height: 56px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #25d366;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: white;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 50%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 1.6rem;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 20px rgba(37,211,102,0.45);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>z-index: 999;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: transform 0.2s, box-shadow 0.2s;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>animation: bouncein 0.5s 1.2s ease both;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.floating-wp:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transform: scale(1.1);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 6px 28px rgba(37,211,102,0.6);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@keyframes bouncein {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>from { opacity: 0; transform: scale(0.5); }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>to <span class="Apple-converted-space">  </span>{ opacity: 1; transform: scale(1); }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;header&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="logo"&gt;Recogidas &amp; &lt;em&gt;Vaciados Pro&lt;/em&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="header-cta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;span class="badge"&gt;✓ Presupuesto sin compromiso&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;a href="tel:+34690100790" class="btn btn-primary" style="padding:10px 20px; font-size:0.85rem;"&gt;📞 Llamar&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-bg"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-overlay"&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-stripe"&gt;&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-content"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-tag"&gt;¿Piso lleno o obra con escombros?&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>Lo Vaciamos&lt;br&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="accent"&gt;Hoy.&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>Precio Cerrado.</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p class="hero-sub"&gt;Vaciamos pisos, retiramos escombros, muebles y chatarra. Servicio en el día, precio cerrado sin sorpresas. Particulares y empresas.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="hero-actions"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="btn btn-wp" target="_blank"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>💬 Presupuesto por WhatsApp</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="tel:+34690100790" class="btn btn-ghost"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>📞 Llamar ahora</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="hero-stats"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stat-number"&gt;24h&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stat-label"&gt;Respuesta rápida&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stat-number"&gt;100%&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stat-label"&gt;Gestión legal&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="stat"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stat-number"&gt;0€&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stat-label"&gt;Presupuesto gratis&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="services"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="section-label"&gt;— Lo que hacemos&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;h2 class="section-title"&gt;Nuestros Servicios&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="services-grid"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="service-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="service-icon"&gt;🏠&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Vaciado de Pisos y Naves&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Vaciamos pisos, trasteros, chalets, oficinas y naves industriales. Retiramos muebles, enseres y dejamos todo limpio.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-num"&gt;01&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="service-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="service-icon"&gt;🏗️&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Retirada de Escombros y Poda&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Limpieza de obras, reformas y recogida de restos vegetales o podas de jardines. Disponemos de transporte adecuado.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-num"&gt;02&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="service-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="service-icon"&gt;⚙️&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Recogida de Metales y Palés&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Retirada de chatarra, maquinaria pesada, estructuras metálicas y palés acumulados en almacenes o empresas.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-num"&gt;03&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="service-card"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="service-icon"&gt;🚛&lt;/span&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h3&gt;Mudanzas y Portes&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Trasladamos tus muebles y pertenencias con cuidado y rapidez. Mudanzas locales, portes puntuales y traslados de empresa sin complicaciones.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="service-num"&gt;04&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="process"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="process-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="section-label"&gt;— ¿Cómo funciona?&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;En 3 Pasos&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="steps"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="step-num"&gt;01&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Contáctanos&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Llama o escríbenos por WhatsApp. Sin burocracia, sin esperas.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="step-num"&gt;02&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Presupuesto gratis&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Te damos precio sin compromiso, adaptado a tu situation real.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="step"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="step-num"&gt;03&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Vaciamos y listo&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Nos encargamos de todo. Recogida, traslado y gestión correcta.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="cta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="cta-inner"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;¿Hablamos sin &lt;span&gt;compromiso?&lt;/span&gt;&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Para particulares y empresas. Trabajo rápido con camión propio. Zona de cobertura amplia.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="cta-buttons"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="btn btn-wp" target="_blank"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>💬 WhatsApp</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="tel:+34690100790" class="btn btn-primary"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>📞 Llamar Ahora</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;footer&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footer-logo"&gt;Recogidas &amp; &lt;em&gt;Vaciados Pro&lt;/em&gt;&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="footer-copy"&gt;&amp;copy; 2026 · Todos los derechos reservados&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/footer&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="floating-wp" target="_blank" aria-label="WhatsApp"&gt;💬&lt;/a&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <header>
+        <div class="logo">Recogidas & <em>Vaciados Pro</em></div>
+        <div class="header-cta">
+            <span class="badge">✓ Presupuesto sin compromiso</span>
+            <a href="tel:+34690100790" class="btn btn-primary" style="padding:10px 20px; font-size:0.85rem;">📞 Llamar</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-stripe"></div>
+
+        <div class="hero-content">
+            <div class="hero-tag">¿Piso lleno o obra con escombros?</div>
+            <h1>
+                Lo Vaciamos<br>
+                <span class="accent">Hoy.</span>
+                Precio Cerrado.
+            </h1>
+            <p class="hero-sub">Vaciamos pisos, naves y trasteros. Retiramos escombros, restos de poda y muebles viejos. Servicio rápido con camión propio y precio cerrado en Valencia.</p>
+            <div class="hero-actions">
+                <a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="btn btn-wp" target="_blank">
+                    💬 Presupuesto por WhatsApp
+                </a>
+                <a href="tel:+34690100790" class="btn btn-ghost">
+                    📞 Llamar ahora
+                </a>
+            </div>
+        </div>
+
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-number">24h</div>
+                <div class="stat-label">Respuesta rápida</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">100%</div>
+                <div class="stat-label">Gestión autorizada</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">0€</div>
+                <div class="stat-label">Presupuesto gratis</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="section-label">— Lo que hacemos</div>
+        <h2 class="section-title">Nuestros Servicios</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">🏠</span>
+                <h3>Vaciado de Pisos y Naves</h3>
+                <p>Vaciamos por completo pisos, naves industriales, chalets, oficinas y locales. Retiramos muebles, enseres y acumulaciones de trastos dejándolo limpio.</p>
+                <div class="service-num">01</div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🏗️</span>
+                <h3>Retirada de Escombros y Poda</h3>
+                <p>Limpieza de restos de reformas, obras y recogida de podas o restos vegetales de parcelas y jardines. Carga rápida con camión propio.</p>
+                <div class="service-num">02</div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">⚙️</span>
+                <h3>Recogida de Metales y Palés</h3>
+                <p>Retirada de chatarra, limpieza de maquinaria pesada, estructuras metálicas viejas y palés de madera acumulados en almacenes.</p>
+                <div class="service-num">03</div>
+            </div>
+            <div class="service-card">
+                <span class="service-icon">🚛</span>
+                <h3>Mudanzas y Portes</h3>
+                <p>Trasladamos tus pertenencias, muebles o cajas de forma ágil y segura. Portes puntuales en Valencia y mudanzas locales adaptadas a ti.</p>
+                <div class="service-num">04</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="process-inner">
+            <div class="section-label">— ¿Cómo funciona?</div>
+            <h2 class="section-title">En 3 Pasos</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-num">01</div>
+                    <h4>Contáctanos</h4>
+                    <p>Llama o escríbenos un WhatsApp explicándonos qué necesitas retirar. Sin esperas.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">02</div>
+                    <h4>Presupuesto sin sorpresas</h4>
+                    <p>Te damos un precio cerrado adaptado a tu situación real y volumen.</p>
+                </div>
+                <div class="step">
+                    <div class="step-num">03</div>
+                    <h4>Carga y Limpieza</h4>
+                    <p>Acudimos puntuales con el camión, realizamos la recogida y lo gestionamos correctamente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-label">— Opiniones de clientes</div>
+        <h2 class="section-title">¿Hemos trabajado juntos?</h2>
+        <div class="google-box">
+            <div class="google-stars">★★★★★</div>
+            <p>Tu valoración nos ayuda a seguir mejorando y a que más clientes en Valencia confíen en nuestro servicio independiente con camión propio.</p>
+            <a href="https://search.google.com/local/writereview?placeid=TU_PLACE_ID_AQUÍ" class="btn btn-google" target="_blank">
+                ✍️ Dejar reseña en Google
+            </a>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-inner">
+            <h2>¿Hablamos sin <span>compromiso?</span></h2>
+            <p>Trabajamos de forma independiente con camión propio en Valencia y alrededores. Rapidez y seriedad.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="btn btn-wp" target="_blank">
+                    💬 WhatsApp
+                </a>
+                <a href="tel:+34690100790" class="btn btn-primary">
+                    📞 Llamar Ahora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Recogidas & <em>Vaciados Pro</em></div>
+        <div class="footer-copy">&copy; 2026 · Todos los derechos reservados</div>
+    </footer>
+
+    <a href="https://wa.me/34690100790?text=Hola,%20solicito%20presupuesto" class="floating-wp" target="_blank" aria-label="WhatsApp">💬</a>
+
 </body>
 </html>
